@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int horasUsadas, valorPago = 50;
+        
+        System.out.println("Digite a quantidade de horas usadas:");
+        horasUsadas = sc.nextInt();
+        
+        if (horasUsadas <= 100)
+        {
+            System.out.println("O valor a ser pago e R$"+ valorPago);
+        }
+        else 
+        {
+            horasUsadas -= 100;
+            valorPago += horasUsadas;
+            System.out.println("O valor a ser pago e R$"+ valorPago);
+        }
+        
+        sc.close();
+    }
+}

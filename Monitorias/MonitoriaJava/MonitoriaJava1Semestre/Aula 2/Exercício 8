@@ -1,0 +1,31 @@
+package main;
+import java.util.Scanner;
+public class Exercicio8_Aula2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Double x, y;
+		
+		System.out.println("Digite um numero com um ponto decimal:");
+		x = sc.nextDouble();
+		System.out.println("Digite outro numero com um ponto decimal:");
+		y = sc.nextDouble();
+		
+		if (x > 0 && y > 0)
+			System.out.println("O ponto com esse coordenada se localiza no primeiro quadrante");
+		if (x < 0 && y > 0)
+			System.out.println("O ponto com esse coordenada se localiza no segundo quadrante");
+		if (x < 0 && y < 0)
+			System.out.println("O ponto com esse coordenada se localiza no terceiro quadrante");
+		if (x > 0 && y < 0)
+			System.out.println("O ponto com esse coordenada se localiza no quarto quadrante");
+		if (y == 0 && x != 0)
+			System.out.println("O ponto com esse coordenada se localiza em cima do eixo x");
+		
+		if (x == 0 && y != 0)
+			System.out.println("O ponto com esse coordenada se localiza em cima do eixo y");
+		
+		if (x == 0 && y == 0)
+			System.out.println("O ponto com esse coordenada se localiza na Origem");
+		sc.close();
+	}
+}

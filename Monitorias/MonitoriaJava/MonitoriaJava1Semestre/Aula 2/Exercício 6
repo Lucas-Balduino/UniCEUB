@@ -1,0 +1,24 @@
+package main;
+import java.util.Scanner;
+public class Exercicio6_Aula2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int horario;
+		
+		System.out.println("Digite a hora atual:");
+		horario = sc.nextInt();
+		
+		
+		if (horario >= 0 && horario < 6)
+			System.out.println("Agora sao "+horario+". Boa Madrugada!");
+		
+		else if (horario >= 6 && horario < 12)
+			System.out.println("Agora sao "+horario+". Boa dia!");
+		
+		else if (horario >= 12 && horario < 18)
+			System.out.println("Agora sao "+horario+". Boa Tarde!");
+		
+		else if (horario >= 18 && horario < 24)
+			System.out.println("Agora sao "+horario+". Boa Noite!");
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+      double a, b, c, areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo, pi = 3.14159;
+      
+        System.out.println("Digite o valor de a ");
+        a = sc.nextDouble();
+         System.out.println("Digite o valor de b ");
+        b = sc.nextDouble();
+         System.out.println("Digite o valor de c ");
+        c = sc.nextDouble();
+      
+      areaTriangulo = (a * c) / 2;
+      
+      areaCirculo = pi * c * c;
+      
+      areaTrapezio = ((a + b) * c) / 2;
+      
+      areaQuadrado = b * b;
+      
+      areaRetangulo = a * b;
+      
+      System.out.println("A area do triangulo retangulo que tem A por base e C por altura e:\n" + areaTriangulo);
+      
+      System.out.println("A area do circulo de raio C. (pi = 3.14159):\n " + areaCirculo);
+      
+      System.out.println("A area do trapezio que tem A e B por bases e C por altura:\n " + areaTrapezio);
+      
+      System.out.println("A area do quadrado que tem lado B:\n" + areaQuadrado);
+      
+      System.out.println("A area do retangulo que tem lados A e B:\n" + areaRetangulo);
+      
+      
+    }
+}

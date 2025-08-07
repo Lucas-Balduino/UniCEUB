@@ -1,0 +1,58 @@
+*{
+    
+}
+
+body{
+    background-color: antiquewhite;    
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.primary-header{
+    align-items: center;
+}
+
+header{
+    text-align: center;
+}
+.TituloH1{
+    font-size: 50px;
+    /*color: beige;*/
+}
+.ImagemTitulo{
+    width: 650px;
+}
+h2{
+    font-size: 30px;
+    color: #205d76;
+}
+li{
+    color: #ffc122;
+}
+a{
+    color: #ea6e2f;
+    font-size: 20px;
+}
+.radape{
+    background-color: #ffc122;
+    height: 50px;
+    text-align: center;
+    padding: 1px;
+    width: 100%;
+}
+.paragrafoDoRodape{
+    color: white;
+}
+section{
+}
+.lucas{
+    display: flex;
+    flex-direction: row;
+}
+div{
+    margin-left: 20px;
+}

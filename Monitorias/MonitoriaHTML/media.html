@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+         <audio autoplay controls>
+              <source src="Aqua.mp3" start="15">
+          </audio>
+          <audio id="myAudio" autoplay controls>
+              <source src="Aqua.mp3">
+          </audio>
+         
+          <script>
+              document.getElementById("myAudio").addEventListener("loadedmetadata", function() {
+                  this.currentTime = 9;
+                  this.play();
+              });
+          </script>
+    </body>
+</html>

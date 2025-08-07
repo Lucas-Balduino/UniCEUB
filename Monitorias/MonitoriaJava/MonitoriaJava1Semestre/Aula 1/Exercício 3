@@ -1,0 +1,23 @@
+package main;
+import java.util.Scanner;
+
+
+public class Exercício3 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int funcionario, horas;
+		Double salarioHora, salario;
+		System.out.println("Digite o numero do funcionário");
+		funcionario = sc.nextInt();
+		System.out.println("Digite a quantidade de horas trabalhadas");
+		horas = sc.nextInt();
+		System.out.println("Digite o salario por hora do funcionário");
+		salarioHora = sc.nextDouble();
+		
+		salario = (float)horas * salarioHora;
+		
+		System.out.println("O funcionário "+ funcionario+"\nSalário = U$"+ salario);
+		
+		sc.close();
+	}
+}

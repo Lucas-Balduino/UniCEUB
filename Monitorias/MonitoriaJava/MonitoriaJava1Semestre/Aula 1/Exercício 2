@@ -1,0 +1,20 @@
+package main;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+/*Faça um código que calcule a área
+* de um trapézio e mostre o resultado
+* com duas casas decimais.
+*/
+
+
+public class Exercício_2 {
+	public static void main(String[] args) {
+		int baseMenor, baseMaior, altura;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite a Base Menor do trapézio");
+		baseMenor = ns.nextInt
+	}
+}

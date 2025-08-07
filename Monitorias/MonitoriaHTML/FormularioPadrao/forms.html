@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset><legend>Informaçoes pessoais</legend>
+            
+            Nome:<input type="text" value="Lucas" disabled><br><br>
+            Sobrenome: <input type="text"autofocus><br><br>
+            <input type="submit" value="botao" style="background-color: antiquewhite; border-radius: 5px;">
+            <hr>
+            <input type="reset">
+        </fieldset>
+    </form>
+    
+    <form action="#" method="post">
+        <fieldset><legend>Pagina de login</legend>
+            
+            Email:<input type="text" value="Lucas" required><br><br>
+            Senha: <input  type="password" required><br><br>
+            <input type="submit" value="botao" style="width: 300px; background-color: antiquewhite;">
+            <hr>
+            <input type="reset">
+        </fieldset>
+    </form>
+
+    <form action="#" method="post">
+        <fieldset><legend>Forms</legend>
+            <input type="checkbox">Aceitar os termos <br><br>
+            <hr>
+            <p>Genero</p>
+            <input type="radio" name="genero" value="H"> Masculino
+            <input type="radio" name="genero" value="F"> Feminino
+            <input type="radio" name="genero" value="X"> Outros
+            <hr>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <hr><br>
+            <select name="" id="">
+                <option value="DF">Distrito Federal</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+            </select>
+            <hr><br> 
+            Qual sua cor favorita: <input type="text" list="cores">
+            <datalist id="cores">
+                <option value="azul"></option>
+                <option value="vermelho"></option>
+                <option value="verde"></option>
+            </datalist>
+            <input type="color">
+            <hr><br>
+            <input type="number" min="0" max="100" step="25"><br><br>
+            <input type="date"><br><br>
+            <input type="range" min="0" max="100" step="20"><br><br>
+            <input type="time"><br><br>
+            <input type="file"><br><br>
+            <input type="tel">
+            <input type="url">
+            <input type="search">
+            <input type="text">
+            <hr><br>
+            <input type="reset">
+        </fieldset>
+    </form>
+
+</body>
+</html>

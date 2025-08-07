@@ -1,0 +1,36 @@
+package main;
+import java.util.Scanner;
+public class Exercicio7_Aula2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int operando1, operando2, operador;
+		float resultado = 0;
+		
+		System.out.println("Digite o primeiro operando:");
+		operando1 = sc.nextInt();
+		System.out.println("Digite o segundo operando:");
+		operando2 = sc.nextInt();
+		
+		System.out.println("Digite o numero que representa o operador desejado \n(1 - Soma, 2 - Subtração, 3 - Divisão ou 4 - Multiplicação):");
+		operador = sc.nextInt();
+		
+		switch (operador)
+		{
+		case 1:
+			resultado = operando1 + operando2;
+			break;
+		case 2:
+			resultado = operando1 - operando2;
+			break;
+		case 3:
+			resultado = operando1 * operando2;
+			break;
+		case 4:
+			resultado = operando1 / operando2;
+		default:
+			System.out.println("Numero digitado nao corresponde a uma operacao");
+		}
+		
+		sc.close();
+	}
+}

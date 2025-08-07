@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojinha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Lojinha</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="novidades.html">Novidades</a></li>
+                <li><a href="wishlist.html">Wish List</a></li>
+            </ul>
+            <div class="user-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </nav>
+    </header>
+    <main id="main-content">
+        <h1>Bem vindo!</h1>
+        <div class="products-grid">
+            <!-- Exemplo de produto -->
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <p>Product name 1</p>
+                    <p class="product-price">R$0,00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToWishList('Product name', 0.00)">Adicionar à Lista de Desejos</button>
+            </div>
+            <!-- Mais produtos podem ser adicionados aqui -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

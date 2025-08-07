@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Input Date com Placeholder</title>
+</head>
+<body>
+
+<label for="meuInputDate">Escolha uma data:</label>
+<input type="date" id="meuInputDate" name="meuInputDate">
+
+<script>
+    // Seleciona o input date
+    const inputDate = document.getElementById('meuInputDate');
+
+    // Adiciona um evento para quando o input é focado
+    inputDate.addEventListener('focus', function() {
+        // Verifica se o valor é o padrão
+        if (this.value === '') {
+            // Define o valor padrão como vazio
+            this.setAttribute('data-placeholder', this.getAttribute('placeholder'));
+            this.removeAttribute('placeholder');
+        }
+    });
+
+    // Adiciona um evento para quando o input perde o foco
+    inputDate.addEventListener('blur', function() {
+        // Verifica se o valor é vazio
+        if (this.value === '') {
+            // Restaura o valor padrão
+            this.setAttribute('placeholder', this.getAttribute('data-placeholder'));
+        }
+    });
+</script>
+
+</body>
+</html>

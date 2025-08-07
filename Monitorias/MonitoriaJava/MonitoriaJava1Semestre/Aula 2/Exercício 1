@@ -1,0 +1,29 @@
+package main;
+import java.util.Scanner;
+
+/*Criem um programa que recebe o número X
+e imprime se o número é maior que dois ,
+menor que dois ou igual a dois
+*/
+
+public class Exercicio_1_Aula_2 {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int x;
+
+       System.out.println("Digite um numero:");
+       x = sc.nextInt();
+
+       if (x == 2){
+           System.out.println("O numero digitado é igual a dois");
+       }
+
+       if (x < 2){
+           System.out.println("O numero digitado é menor que dois");
+       }
+
+       if (x > 2){
+           System.out.println("O numero digitado é maior que dois");
+       }
+   }
+}

@@ -17,6 +17,20 @@ unica tarefa e executar um unico programa por vez. (Antes da terceira geracao)
 - Utilizar o hardware do computador de forma eficiente.
 - Possibilitar o constante aprimoramento e desenvolvimento de funcionalidades.
 
+## Servicos Oferecidos pelo SO
+- Criação de Programas
+- Execucao de Programas
+- Acesso a dispositivos de Entrada e Saída
+- Controle de acesso de arquivos
+- Acesso a recursos de sistema
+- Contabilidade
+  - Estatísticas
+  - Sinalizar upgrades necessarios
+  - Tarifacao de usuários
+- Deteccao de Erros
+  - Erros de Hardware
+  - Erros de Programas
+
 ## Programas de sistema
 - Kernel: Núcleo, possui o gerenciador de programas, meméria, arquivos, dispositivos.
 - Shell: Permite acessar o Kernel, Terminal.

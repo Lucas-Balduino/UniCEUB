@@ -34,7 +34,7 @@ informacoes.
 - Elementos podem ser enumerados (Nao necessariamente inteiros)
 - *Ex*: Numero de Filhos, Numero de defeitos em uma peca
 
-#### Discreta
+#### Continua
 - Nao é possivel enumerar, não possui uma sequencia natural 
 - *Ex*: Salário 
 

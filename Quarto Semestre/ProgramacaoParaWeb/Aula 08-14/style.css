@@ -1,0 +1,51 @@
+/* Estilização Geral da Página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte para todo o corpo */
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0; /* Remove o padding padrão */
+    background-color: #f4f4f4; /* Cor de fundo cinza claro */
+    color: #333; /* Cor do texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas do texto */
+}
+
+/* Estilização do Cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem; /* Aumenta o espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+header h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+}
+
+.data-publicacao {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Estilização do Conteúdo Principal */
+main {
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 2rem auto; /* Centraliza o main na página com margem */
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.introducao {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid #007bff; /* Adiciona uma barra lateral azul */
+    padding-left: 1rem;
+}
+
+/* Estilização do Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    
+}

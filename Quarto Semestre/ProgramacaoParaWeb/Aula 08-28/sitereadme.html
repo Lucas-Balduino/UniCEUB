@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>README — Lucas Balduino (localized)</title>
+
+  <!-- Simple Markdown renderer (marked) via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    :root{ --bg:#0b0f14; --card:#0f1317; --text:#e8eef6; --muted:#9aa3b2; --accent:#7c5cff }
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);padding:28px}
+    .wrap{max-width:900px;margin:0 auto}
+    .lang-switch{display:flex;gap:8px;justify-content:flex-end;margin-bottom:12px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--text);cursor:pointer}
+    .btn.active{background:var(--accent);color:#061019;border:none}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    a{color:inherit}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="lang-switch" aria-hidden="false">
+      <button id="btn-en" class="btn">English</button>
+      <button id="btn-pt" class="btn">Português</button>
+    </div>
+
+    <div class="card">
+      <div class="meta">This page shows your profile README localized. You can switch language manually.</div>
+      <div id="content">Loading…</div>
+    </div>
+  </div>
+
+<script>
+/*
+ Behavior:
+ 1) Detect browser language via navigator.language (e.g. "pt-BR", "en-US").
+ 2) If a saved preference exists in localStorage -> use it.
+ 3) Otherwise pick language: 'pt' if startsWith 'pt', else 'en'.
+ 4) Fetch the corresponding markdown file from /readme/{lang}.md, convert to HTML with marked().
+ 5) Allow manual switching with buttons (save preference to localStorage).
+*/
+
+// mapping from our code to file names
+const LANG_FILE = { en: '/readme/en.md', pt: '/readme/pt.md' };
+
+function preferedFromNavigator() {
+  const nav = navigator.language || navigator.userLanguage || navigator.languages && navigator.languages[0];
+  if (!nav) return 'en';
+  return nav.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+}
+
+function getStoredLang(){ return localStorage.getItem('rb_lang'); }
+function storeLang(l){ localStorage.setItem('rb_lang', l); }
+
+async function loadLang(lang){
+  const contentEl = document.getElementById('content');
+  contentEl.innerHTML = 'Loading…';
+  const file = LANG_FILE[lang] || LANG_FILE.en;
+  try {
+    const res = await fetch(file);
+    if(!res.ok) throw new Error('Not found');
+    const md = await res.text();
+    // convert markdown to HTML using marked (CDN above)
+    contentEl.innerHTML = marked.parse(md);
+    // update active button
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+  } catch(err){
+    contentEl.innerHTML = '<p style="color:var(--muted)">Sorry — localized README not available.</p>';
+  }
+}
+
+document.getElementById('btn-en').addEventListener('click', ()=>{ storeLang('en'); loadLang('en'); });
+document.getElementById('btn-pt').addEventListener('click', ()=>{ storeLang('pt'); loadLang('pt'); });
+
+(function init(){
+  const stored = getStoredLang();
+  const pick = stored || preferedFromNavigator();
+  loadLang(pick);
+})();
+</script>
+</body>
+</html>

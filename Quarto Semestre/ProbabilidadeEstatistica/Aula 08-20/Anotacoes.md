@@ -37,7 +37,7 @@
  - Valores de variavel que divide o conjunto de dados ordenados em quatro grupos iguais
  - **1 Quartil**: Representa 25% dos dados
  - **2 Quartil**: Representa 50% dos dados
- - **1 Quartil**: Representa 75% dos dados
+ - **3 Quartil**: Representa 75% dos dados
 
 # Medidas de Posição
 - Média Aritimética: Somatorio de X / numero de Dados 

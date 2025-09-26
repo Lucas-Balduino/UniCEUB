@@ -28,7 +28,7 @@ df = load_data()
 st.title("ODS — Educação de Qualidade: Índice de Desenvolvimento Docente (IDD)")
 st.markdown(
     """
-Este app explora o dataset **IDD 2023** (base enviada pelo usuário).
+Este app explora o dataset **IDD 2023**.
 Tema central: **Qualidade da docência no ensino superior** medida pelo IDD —
 visualize distribuições, compare por estado/área e identifique cursos/IES com maiores desafios.
 """)

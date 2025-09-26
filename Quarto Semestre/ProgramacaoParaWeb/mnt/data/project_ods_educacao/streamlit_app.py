@@ -10,8 +10,8 @@ from src.data_prep import prepare, load_raw, basic_cleaning
 
 st.set_page_config(page_title="ODS: Educação Superior — IDD (2023)", layout="wide")
 
-DATA_RAW = "project_ods_educacao/data/IDD_2023.xlsx"
-DATA_PROCESSED = "project_ods_educacao/data/processed/idd_processed.csv"
+DATA_RAW = "IDD_2023.xlsx"
+DATA_PROCESSED = "data/processed/idd_processed.csv"
 
 @st.cache_data
 def load_data():
@@ -111,6 +111,6 @@ st.markdown("---")
 st.markdown("### Notas e instruções")
 st.markdown(
     """
-- O app utiliza o arquivo Excel presente no workspace (`data/IDD_2023.xlsx`).
+- O app utiliza o arquivo Excel presente no workspace (`/mnt/data/IDD_2023.xlsx`).
 - Se desejar adicionar um mapa choropleth por UF, inclua um GeoJSON de estados do Brasil em `data/geojson/br_states.geojson` e adicione a seção correspondente no código.
 - Para rodar localmente:\n\n```\npip install -r requirements.txt\nstreamlit run streamlit_app.py\n```\n\n""")

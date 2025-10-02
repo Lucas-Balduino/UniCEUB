@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="bloco">
+      <div class="texto">
+        <a href="" class="formatacao">Formulário</a>
+      </div>
+    </header>
+    <main class="InfoPessoal">
+      <form action="#" method="post">
+        <fieldset class="blocoForms" style="border: #c6c6c6">
+          <legend class="formatacao">Informações pessoais</legend>
+          <label for="Nome" class="formatacaoImput">Nome:</label>
+          <input
+            class="decoracao formatacaoImput"
+            type="text"
+            id="Nome"
+            required
+          /><br /><br />
+          <label for="Sobrenome" class="formatacaoImput">Sobrenome:</label>
+          <input
+            class="decoracao formatacaoImput"
+            type="text"
+            id="Sobrenome"
+            required
+          /><br /><br />
+          <label for="Data" class="formatacaoImput">Data de Nascimento:</label>
+          <input
+            class="decoracao formatacaoImput"
+            type="date"
+            id="Data"
+            required
+          /><br /><br />
+          <label for="Genero" class="formatacaoImput">Genero:</label>
+          <select class="decoracao formatacaoImput select" id="Genero" required>
+            <option value="1">Masculino</option>
+            <option value="2">Feminino</option>
+            <option value="3">Outro</option></select
+          ><br /><br />
+          <label for="Estado" class="formatacaoImput">Estado Civil:</label>
+          <select class="decoracao formatacaoImput select" id="Estado" required>
+            <option value="1">Solteiro</option>
+            <option value="2">Casado</option>
+            <option value="3">Namorando</option></select
+          ><br /><br />
+          <div class="EnviarReset">
+            <input
+              class="decoracao formatacaoImput"
+              id="Enviar"
+              type="submit"
+              value="Enviar"
+            />
+            <input class="decoracao formatacaoImput" id="Reset" type="reset" />
+          </div>
+        </fieldset>
+      </form>
+      <div class="DadosDeLogin">
+        <form action="#" method="post">
+          <fieldset class="blocoForms" style="border: #c6c6c6">
+            <legend class="formatacao">Dados de Login</legend>
+            <label for="Email" class="formatacaoImput">Email:</label>
+            <input
+              class="decoracao formatacaoImput"
+              type="text"
+              id="Email"
+              required
+            /><br /><br />
+            <a href="" class="Esqueci">Esqueci meu email...</a><br /><br />
+            <label for="Senha" class="formatacaoImput">Senha:</label>
+            <input
+              class="decoracao formatacaoImput"
+              type="password"
+              id="Senha"
+              required
+            /><br /><br />
+            <a href="EsqueciMinhaSenha.html" class="Esqueci"
+              >Esqueci minha senha...</a
+            ><br /><br />
+            <p class="Entrar formatacaoImput">Entrar com...</p>
+            <div class="botoes">
+              <a href="">
+                <button class="button">
+                  <img
+                    id="GoogleLogo"
+                    src="imagens/logos--google-icon.png"
+                    alt=""
+                  />
+                </button>
+              </a>
+              <a href=""
+                ><button class="button">
+                  <img
+                    id="FacebookLogo"
+                    src="imagens/logos--facebook.png"
+                    alt="logoFacebook"
+                  />
+                </button>
+              </a>
+
+              <button class="button">
+                <img id="AppleLogo" src="imagens/logos--apple.png" alt="" />
+              </button>
+            </div>
+            <div class="EnviarReset">
+              <input
+                class="decoracao formatacaoImput"
+                id="Enviar"
+                type="submit"
+                value="Enviar"
+              />
+              <input
+                class="decoracao formatacaoImput"
+                id="Reset"
+                type="reset"
+              />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

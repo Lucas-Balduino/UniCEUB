@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <style>
+    /* Estilos Globais */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Cabeçalho */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #007BFF;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    /* Menu de Navegação */
+    nav {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 200px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      height: calc(100vh - 60px); /* Preenche a altura da tela */
+      overflow-y: auto; /* Permite rolagem se necessário */
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    /* Seção Principal */
+    main {
+      margin-top: 60px;
+      margin-left: 220px; /* Deixando espaço para o menu */
+      padding: 20px;
+    }
+
+    .content {
+      width: 70%;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      color: #007BFF;
+    }
+
+    /* Container de Imagem Responsiva e Centralizada */
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Rodapé */
+    footer {
+      position: relative; /* Rodapé ficará após o conteúdo */
+      width: 100%;
+      height: 40px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; /* Espaço para o rodapé */
+    }
+
+    /* Estilo do Conteúdo Principal */
+    .main-content {
+      padding-bottom: 60px; /* Para evitar sobreposição do rodapé */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Portfólio</h1>
+    <a href="#contato">Contato</a>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#servicos">Serviços</a>
+  </nav>
+
+  <main class="main-content">
+    <!-- Seção Sobre -->
+    <section id="sobre" class="content section">
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá, eu sou um desenvolvedor web apaixonado por criar soluções tecnológicas inovadoras. Tenho experiência em
+        várias linguagens de programação, incluindo HTML, CSS, JavaScript e TypeScript. Sempre procuro novos desafios
+        para melhorar minhas habilidades e contribuir para projetos que tenham impacto real.
+      </p>
+      <p>
+        Quando não estou programando, gosto de explorar novas tecnologias, ler sobre inovações na área e colaborar com
+        outros desenvolvedores em projetos de código aberto. Meus hobbies incluem fotografia e viagens, o que me ajuda
+        a manter a criatividade em alta!
+      </p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="content section">
+      <h2>Meus Projetos</h2>
+      <p>
+        Aqui estão alguns dos projetos nos quais trabalhei recentemente:
+      </p>
+
+      <ul>
+        <li><strong>Projeto 1:</strong> Plataforma de e-commerce utilizando React e Node.js</li>
+        <li><strong>Projeto 2:</strong> Sistema de gestão de tarefas com autenticação via Firebase</li>
+        <li><strong>Projeto 3:</strong> Site institucional para uma startup de tecnologia, utilizando Bootstrap</li>
+      </ul>
+
+      <p>
+        Cada um desses projetos me permitiu explorar diferentes aspectos do desenvolvimento web, desde front-end até
+        back-end, e usar tecnologias como APIs RESTful, bancos de dados NoSQL e muito mais.
+      </p>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="content section">
+      <h2>Serviços</h2>
+      <p>
+        Ofereço os seguintes serviços de desenvolvimento web:
+      </p>
+
+      <ul>
+        <li>Desenvolvimento de sites responsivos</li>
+        <li>Otimização de performance e SEO</li>
+        <li>Consultoria em projetos de software</li>
+        <li>Manutenção e suporte técnico</li>
+      </ul>
+
+      <p>
+        Entre em contato para discutir suas necessidades de projeto e como eu posso ajudar!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Meu Portfólio</p>
+  </footer>
+</body>
+</html>

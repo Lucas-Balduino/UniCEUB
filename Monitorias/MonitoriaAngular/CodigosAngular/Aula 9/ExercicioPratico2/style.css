@@ -1,0 +1,85 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Contêiner Flexbox */
+  .container {
+    display: flex;
+    min-height: 80vh;
+  }
+  
+  /* Barra de Navegação (Sidebar) */
+  .sidebar {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    width: 250px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 0.5rem;
+    background-color: #e4e4e4;
+  }
+  
+  .sidebar a:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  /* Conteúdo Principal */
+  .content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+    }
+  
+    .content {
+      padding: 1rem;
+    }
+  }
+  

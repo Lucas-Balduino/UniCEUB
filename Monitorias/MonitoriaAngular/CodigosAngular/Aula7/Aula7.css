@@ -1,0 +1,44 @@
+#ImagemBemVindo{
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+#ImagemConteudo{
+    width: 200px;
+}
+
+h1,h2,a,p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#TitleConteiner{
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background-color: #ADCCAA;
+    /* padding-left: 20px; */
+}
+footer{
+    background-color: #389e2b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+section{
+    margin-top: 40px;
+}

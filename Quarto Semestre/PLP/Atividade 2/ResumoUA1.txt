@@ -1,0 +1,12 @@
+    A Programação Declarativa prioriza em descrever o objetivo a ser alcançado com o programa especifico, 
+o contrario do paradigma Imperativo que foca na descrição do processo para chegar ao objetivo do programa.
+
+    Aplicações de projetos feitos em linguagens declatarivas:
+    - Aplicações de IA: O paradigma se encaixa por relacionar regras e informações de forma lógica, que é
+    a maneira que as IA's funcionam.
+    - Aplicações de acesso de informações em Bancos de Dados: O paradigma se predomina nas consultas e manipulação
+    de dados na gestão da base de dados se tornando cores de SGBD's como SQL.
+
+    As Linguagens do Paradigma Declarativo ainda podem ser divididas em funcional e lógica, na programação funcional
+o programa é composto por um conjunto de definições e funções (que são compostas por outras funções), já a programação lógica
+é um conjunto de afirmações sobre varias entidades do dominio da apliação. 

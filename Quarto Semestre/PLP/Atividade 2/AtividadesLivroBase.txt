@@ -1,0 +1,50 @@
+;1) Escreva a definição de uma função que, a partir de dois números, escreva qual é o maior?
+
+(define(maior x y)
+  (if(> x y)
+      x
+      y)
+)
+
+(maior 3 4)
+(maior 5 4)
+
+;2) Escreva a definição de uma função que, a partir de dois números, escreva se são ou não múltiplos?
+
+(define(multiplos x y) 
+  (if(= (remainder x y) 0)
+         "Multiplo"
+         "Nao Multiplo"
+     )
+)
+
+(multiplos 10 5)
+(multiplos 9 2)
+ 
+;3) Um supermercado deseja reajustar os preços de seus produtos, para mais ou
+;para menos, de acordo com os critérios mostrados na tabela abaixo. Escrever
+;uma definição de função que, a partir dos valores do preço atual e da venda
+;média mensal do produto, calcule qual o preço reajustado?
+
+(define (reajuste vmm pa) 
+  (cond ((and (< vmm 500) (< pa 30)) (list (* pa 1.1) "Aumento 10%"))
+        ((and (>= vmm 500) (<= vmm 1200) (>= pa 30) (< pa 80)) (list (* pa 1.15)"Aumento 15%"))
+        ((and (>= vmm 1200) (<= pa 80)) (list (* pa 0.8) "Diminuição 20%"))
+        )
+)
+ 
+ (reajuste 380 18)
+ (reajuste 600 35)
+ (reajuste 1300 80)
+
+
+;4) Escreva a definição de funções que, a partir de um parâmetro representando a
+;o tempo necessário para fabricar um produto expresso em segundos, mostreo expresso em horas, minutos e segundos(dica: ;utilize as primitivas quotient para extrair a parte inteira de uma divisão e remainder para extrair o resto da
+;divisão).
+
+(define (convTempo s)
+  (let ((h (/ s 3600))
+        (m (/ s 60)))
+    (list h m s))
+)
+(convTempo 3661)

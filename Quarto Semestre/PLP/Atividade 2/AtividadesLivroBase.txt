@@ -39,12 +39,83 @@
 
 
 ;4) Escreva a definição de funções que, a partir de um parâmetro representando a
-;o tempo necessário para fabricar um produto expresso em segundos, mostreo expresso em horas, minutos e segundos(dica: ;utilize as primitivas quotient para extrair a parte inteira de uma divisão e remainder para extrair o resto da
-;divisão).
+;o tempo necessário para fabricar um produto expresso em segundos, mostreo expresso em horas, minutos e segundos(dica: utilize as primitivas quotient para extrair a parte inteira de uma divisão e remainder 
+;para extrair o resto da divisão).
 
-(define (convTempo s)
-  (let ((h (/ s 3600))
-        (m (/ s 60)))
+(define (convTempo seg)
+  (let ((h (quotient seg 3600))
+        (m (quotient (remainder seg 3600) 60))
+        (s (remainder (remainder seg 3600) 60)))
     (list h m s))
 )
 (convTempo 3661)
+
+;5) Escreva a definição de uma função que conte, a partir do número informado
+;como parâmetro, até chegar a zero. Enquanto não chegar a zero, mostrar o
+;número correspondente. Quando a contagem chegar a zero, mostrar a
+;mensagem "Encerrado".
+
+(define (contador x)
+  (if (= x 0)
+      (display "Encerrado")
+      (begin
+        (display x)
+        (newline)
+        (contador (- x 1))
+       )
+  )
+)
+
+(contador 6)
+
+;6) Escreva a definição de funções que, a partir de um parâmetro representando a
+;idade de uma pessoa expressa em dias, mostre-a expressa em anos, meses e
+;dias (dica: utilize as primitivas quotient para extrair a parte inteira de uma
+;divisão e remainder para extrair o resto da divisão).
+
+(define (convIdade dias)
+  (let ((a (quotient dias 365))
+        (m (quotient (remainder dias 365) 30))
+        (d (remainder (remainder dias 365) 30)))
+    (list a m d))
+)
+(convIdade 7658)
+
+;7) Escreva a definição de uma função que, a partir de três parâmetros (dois
+;números e um caracter representando a operação aritmética desejada + - * /)
+;calcula o resultado da operação aritmética (dica: utilize a primitiva cond).
+
+(define (calculadora x op y)
+  (cond ((string=? op "+")(+ x y))
+        ((string=? op "-")(- x y))
+        ((string=? op "*")(* x y))
+        ((string=? op "/")(/ x y))
+  )
+)
+
+(calculadora 3 "+" 4)
+
+;8) Escreva a definição de uma função que, a partir de um parâmetro numérico
+;representando o salário bruto de uma pessoa, calcule o valor a ser pago
+;referente ao INSS, de acordo com as seguintes faixas de valores: até R$1200,00
+;2% do salário bruto, acima de R$1200,00 até R$2500,00 5% do salário bruto e
+;acim de R$2500,00 8% do salário bruto (dica: utilize a primitiva cond).
+
+(define (inss x )
+  (cond ((< x 1200)(* x 0.2))
+        ((and (> x 1200)(< x 2500))(* x 0.5))
+        ((> x 2500)(* x 0.8))
+  )
+)
+
+(inss 1800)
+
+;9) Escreva a definição de uma função que calcule o fatorial de um número
+
+(define (factorial x)(if (= x 0)
+                         1
+                         (* x (factorial (- x 1)))
+                         )
+  )
+(factorial 6)
+

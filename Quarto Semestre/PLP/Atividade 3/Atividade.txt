@@ -1,0 +1,110 @@
+(display "Exercise 2.2.1")
+;Convert the following arithmetic expressions into Scheme expressions and evaluate them.
+
+(display  "a.1.2 × (2 - 1/3) + -8.7")
+
+(define (ex211a)
+  (+ (* 1.2 (- 2 (/ 1 3) ) ) -8.7 )
+  ) 
+
+(ex211a)
+
+(display "b.(2/3 + 4/9) ÷ (5/11 - 4/3)")
+
+(define (ex211b)
+  (/ (+ (/ 2 3) (/ 4 9) ) (- (/ 5 11) (/ 4 3) ) )
+  )
+
+(ex211b)
+
+(display "c.1 + 1 ÷ (2 + 1 ÷ (1 + 1/2))")
+
+(define (ex211c) 
+  (+ 1 (/ 1 (+ 2 (/ 1 (+ 1 (/ 1 2 ) ) ) ) ) ) 
+  )
+
+(ex211c)
+
+(display "d.1 × -2 × 3 × -4 × 5 × -6 × 7")
+
+(define (ex211d) (* 1 (* -2 (* 3 (* -4 (* 5 (* -6 7) ) ) ) ) ) )
+(ex211d)
+
+(display "Exercise 2.2.3")
+;Determine the values of the following expressions. Use your Scheme system to verify your answers.
+
+(display "a. (cons 'car 'cdr)")	
+(cons 'car 'cdr)
+
+(display "b. (list 'this '(is silly))")	
+(list 'this '(is silly))
+
+(display "c. (cons 'is '(this silly?))")	
+(cons 'is '(this silly?))
+
+(display "d. (quote (+ 2 3))")	
+(quote (+ 2 3))
+
+(display "e. (cons '+ '(2 3))")	
+(cons '+ '(2 3))
+  
+(display "f. (car '(+ 2 3))")	
+(car '(+ 2 3))
+
+(display "g. (cdr '(+ 2 3))")	
+(cdr '(+ 2 3))
+
+(display "h. cons")	
+cons
+
+(display "i. (quote cons)")	
+(quote cons)
+
+(display "j. (quote (quote cons))")	
+(quote (quote cons))
+
+(display "k. (car (quote (quote cons)))")	
+(car (quote (quote cons)))
+
+(display "l. (+ 2 3)")	
+(+ 2 3)
+
+(display "m. (+ '2 '3)")	
+(+ '2 '3)
+
+(display "n. (+ (car '(2 3)) (car (cdr '(2 3))))")	
+(+ (car '(2 3)) (car (cdr '(2 3))))
+  
+(display "o. ((car (list + - * /)) 2 3)")	
+((car (list + - * /)) 2 3)
+
+(display "Exercise 2.2.4")
+;(car (car '((a b) (c d)))) yields a. Determine which compositions of car and cdr applied to ((a b) (c d)) yield b, ;c, and d.
+
+(car (cdr (car '((a b) (c d)))))
+
+(car (car (cdr '((a b) (c d)))))
+
+(car (cdr (car (cdr '((a b) (c d))))))
+
+(display "Exercise 2.3.1")
+
+; Write down the steps necessary to evaluate the expression below.
+
+((car (cdr (list + - * /))) 17 5)
+
+(display "Seleciona Todos elementos da lista menos o primeiro com cdr (- * /), Seleciona o primeiro elemento da lista com car (-), efetua a operação de subtração entre 17 e 5 resultando em 12")
+
+(display "Exercise 2.4.1")
+;Rewrite the following expressions, using let to remove common subexpressions and to improve the structure of the ;code. Do not perform any algebraic simplifications.
+
+(display "a.(+ (- (* 3 a) b) (+ (* 3 a) b))")
+
+(let ((x (* 3 4))) (+ (- x 2) (+ x 2)) )
+
+(display "b.(cons (car (list a b c)) (cdr (list a b c)))")
+
+(let ((x (list a b c))) (cons (car x) (cdr x) ) )
+
+
+

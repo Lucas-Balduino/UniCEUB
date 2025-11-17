@@ -1,4 +1,5 @@
 (display "Exercise 2.2.1")
+
 ;Convert the following arithmetic expressions into Scheme expressions and evaluate them.
 
 (display  "a.1.2 × (2 - 1/3) + -8.7")
@@ -30,7 +31,10 @@
 (define (ex211d) (* 1 (* -2 (* 3 (* -4 (* 5 (* -6 7) ) ) ) ) ) )
 (ex211d)
 
+
+(display " ")
 (display "Exercise 2.2.3")
+
 ;Determine the values of the following expressions. Use your Scheme system to verify your answers.
 
 (display "a. (cons 'car 'cdr)")	
@@ -78,7 +82,9 @@ cons
 (display "o. ((car (list + - * /)) 2 3)")	
 ((car (list + - * /)) 2 3)
 
+(display " ")
 (display "Exercise 2.2.4")
+
 ;(car (car '((a b) (c d)))) yields a. Determine which compositions of car and cdr applied to ((a b) (c d)) yield b, ;c, and d.
 
 (car (cdr (car '((a b) (c d)))))
@@ -87,6 +93,8 @@ cons
 
 (car (cdr (car (cdr '((a b) (c d))))))
 
+
+(display " ")
 (display "Exercise 2.3.1")
 
 ; Write down the steps necessary to evaluate the expression below.
@@ -95,16 +103,41 @@ cons
 
 (display "Seleciona Todos elementos da lista menos o primeiro com cdr (- * /), Seleciona o primeiro elemento da lista com car (-), efetua a operação de subtração entre 17 e 5 resultando em 12")
 
+
+(display " ")
 (display "Exercise 2.4.1")
+
 ;Rewrite the following expressions, using let to remove common subexpressions and to improve the structure of the ;code. Do not perform any algebraic simplifications.
 
 (display "a.(+ (- (* 3 a) b) (+ (* 3 a) b))")
+
+(display "Para a = 4 e b = 2")
 
 (let ((x (* 3 4))) (+ (- x 2) (+ x 2)) )
 
 (display "b.(cons (car (list a b c)) (cdr (list a b c)))")
 
-(let ((x (list a b c))) (cons (car x) (cdr x) ) )
+(let ((x '(list a b c))) (cons (car x) (cdr x) ) )
 
 
+(display " ")
+(display "Exercise 2.4.2")
 
+; Determine the value of the following expression. Explain how you derived this value.
+
+(let ([x 9])
+  (* x
+     (let ([x (/ x 3)])
+       (+ x x))))
+
+(display "Primeiramente é atribuido o valor 9 para o x, em seguida esse nove é multiplicado por uma expressão; essa expressao é composta por um x que possui o valor da expressao 9/3, a multiplicacao de 9 pelo resultado da expressao reduzida (6) dá 54")
+
+
+(display " ")
+(display "Exercise 2.5.1 a)")
+; Determine the values of the expressions below.
+	
+(let ([f (lambda (x) x)])
+  (f 'a))
+
+(display "É atribuido a f uma funcao anonima que recebe um valor x e o retorna, ao atribuir 'a como valor literal para nao ser reconhecido uma variavel a saida é (a)")

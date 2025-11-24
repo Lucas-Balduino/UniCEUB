@@ -1,0 +1,15 @@
+Exercícios do Capítulo 4
+
+1. Marque V para Verdadeiro e F para Falso, considerando que as afirmações
+indicam eventos de acordo com o paradigma estudado neste capítulo:
+( V ) Clicar com o botão esquerdo do mouse
+( F ) Acessar uma tabela no banco de dados
+( V ) Pressionar uma tecla sobre um controle
+( F ) Mostrar um componente (controle) na tela
+( V ) Entrar ou sair de um formulário (janela)
+
+2. Complete as lacunas:
+Os controles, também podem ser chamados de componentes ou objetos.
+Os controles possuem (propriedades) que são as suas características e
+(métodos) que permitem a inserção de código-fonte associado à
+ocorrência de (eventos).

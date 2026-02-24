@@ -1,3 +1,7 @@
+Ter Node Package Management NPM
+Instalar NPX pelo NPM
+Instalar expo pelo NPM
+
 "npx create-expo-app@latest"
 - Definição do nome
 

@@ -1,0 +1,23 @@
+O que define uma Interface no contexte de Interação Humano-Caomputador?
+ - Pense na comunicaçao entre duas partes que não se conectam diretamente
+
+ No início da era computacional, quem eram os únicos capazes de operar as interfaces?
+- Não existiam telas como conhecemos hoje. Pense em 'botões' e 'cálculos'
+R: Interface de hardware feita para engenheiros, compostas por diversos botões de interação, alta complexidade
+
+A interface deixou de ser apenas físicas e assou a focar na lógica. quais linguagens doinavam essa era?
+- Sigas famosas usadas para cálculos complexos e atividades laborais.
+R: Cobol e fortran, foco em cálculos mais complexos, aplicação em atividades laborais e corporativas
+
+Antes do mouse e das janelas, como os computadores interagiam entre si?
+- O início do apelo visual, mas ainda baseado em texto
+R: Interface de terminais, linguagem de comando.
+
+Que revolução visual tornou o PC fácil o suficiente para o usuário final?
+R: GUI e multimídia, interfaces
+
+Nos anos de 90, o foco da interface expandi. Qual foi o novo objetivo principal?
+R: Redes e grupos 
+
+Onde encontramos interfaces atualmente?
+Celulares dispositivos móveis  e eletronicos

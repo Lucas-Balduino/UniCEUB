@@ -1,0 +1,60 @@
+Atividade 2 - Design de Sistemas Especialistas
+Lucas Gonçalves Balduino - 22409139
+
+1. Sistema de Triagem médica
+
+def diagnostico(sintomas):
+    regras = [
+    { "condicoes": ["febre", "tosse"], "resultado": "Possível Gripe" },
+    { "condicoes": ["dificuldade_respiratoria"], "resultado": "Emergencia Médica" },
+    ]
+
+    for regra in regras:
+        if all(sintoma in sintomas for sintoma in regra["condicoes"]):
+        return regra["resultado"]
+        return "Diagnóstico inconclusivo"
+
+# Teste
+
+entrada = ["dificuldade_respiratoria"]
+print(diagnostico(entrada)) # Saída: Emergencia Médica
+
+2. Diagnóstico TI
+
+def diagnostico(fatos):
+    regras = [
+    { "condicoes": ["luz_desligada", "luz_vermelha"], "resultado": "Sem Internet" },
+    { "condicoes": ["carregamento_lento", "luz_piscando"], "resultado": "Latência Alta" },
+    ]
+
+    for regra in regras:
+        if (fato in fatos for fato in regra["condicoes"]):
+        return regra["resultado"]
+        return "Diagnóstico inconclusivo"
+# Teste
+
+entrada = ["luz_desligada", "luz_vermelha"]
+print(diagnostico(entrada)) # Saída: Sem Internet
+
+3. Recomendador de Linguagens
+
+def diagnostico(Interesses):
+    regras = [
+    { "condicoes": ["web", "design"], "resultado": "Java Script" },
+    { "condicoes": ["dados", "IA"], "resultado": "Python" },
+    ]
+
+    for regra in regras:
+        if all(interesse in interesses for interesse in regra["condicoes"]):
+        return regra["resultado"]
+        return "Diagnóstico inconclusivo"
+# Teste
+
+entrada = ["web", "design"]
+print(diagnostico(entrada)) # Saída: Java Script
+
+    Sistema Especialista é um sisitema computacional que simula o raciocínio de um especialista de uma área, 
+sua principal diferença de um programa de computador comum é sua arquitetura composta por motor de inferencia, 
+base de conhecimento e interface com usuário, com a base de conhecimento em uma estrutura de condições que 
+simulam um raciocinio de um humano especialista da área. Nessa atividade, o primeiro caso (Médico), ilustra um 
+sistema simples em que todos os sintomas tem que coincidir com o da doença para ter o resultado

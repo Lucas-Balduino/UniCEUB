@@ -8,7 +8,7 @@ def diagnostico(sintomas):
     for regra in regras:
         if all(sintoma in sintomas for sintoma in regra["condicoes"]):
             return regra["resultado"]
-        return "Diagnóstico inconclusivo"
+    return "Diagnóstico inconclusivo"
 
 # Teste
 
@@ -50,16 +50,32 @@ print("------------------")
 
 def diagnostico(Interesses):
     interesses = [
-    { "condicoes": ["web", "design"], "resultado": "Java Script" },
-    { "condicoes": ["dados", "IA"], "resultado": "Python" },
+    { "pesos": {"web": 2,"front-end": 1}, "resultado": "JavaScript" },
+    { "pesos": {"dados": 2,"ia": 1}, "resultado": "Python" },
+    { "pesos": {"jogos": 2,"desktop": 1}, "resultado": "C#" },
     ]
 
-    for interesse in interesses:
-        if all(interesse in interesses for interesse in interesse["condicoes"]):
-            return interesse["resultado"]
-        return "Diagnóstico inconclusivo"
+    pontuacoes = {"JavaScript": 0, "Python": 0, "C#" : 0}
+
+    for interesse in Interesses:
+        for area in interesses: 
+            if interesse in area["pesos"]:
+                pontuacoes[area["resultado"]] += area["pesos"][interesse]
+    
+    linguagem = [chave for chave,valor in pontuacoes.items() if valor == max(pontuacoes.values())]
+    print(linguagem)
 # Teste
 
-entrada = ["web", "design"]
-print(diagnostico(entrada)) # Saída: Java Script
-print("------------------")
+
+entrada_python = ["dados", "ia"]
+print(diagnostico(entrada_python)) # Saída: ['Python']
+
+
+entrada_csharp = ["jogos", "desktop"]
+print(diagnostico(entrada_csharp)) # Saída: ['C#']
+
+entrada_empate = ["web", "dados"]
+print(diagnostico(entrada_empate)) # Saída: ['JavaScript', 'Python'] (ambos terminam com 2 pontos)
+
+entrada_zero = ["musica", "culinaria"]
+print(diagnostico(entrada_zero)) # Saída: ['JavaScript', 'Python', 'C#'] (todos empatam com 0 pontos)

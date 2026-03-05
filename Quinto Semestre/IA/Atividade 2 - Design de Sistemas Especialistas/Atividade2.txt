@@ -1,8 +1,7 @@
 Atividade 2 - Design de Sistemas Especialistas
 Lucas Gonçalves Balduino - 22409139
 
-1. Sistema de Triagem médica
-
+# Triagem Médica
 def diagnostico(sintomas):
     regras = [
     { "condicoes": ["febre", "tosse"], "resultado": "Possível Gripe" },
@@ -11,15 +10,18 @@ def diagnostico(sintomas):
 
     for regra in regras:
         if all(sintoma in sintomas for sintoma in regra["condicoes"]):
-        return regra["resultado"]
-        return "Diagnóstico inconclusivo"
+            return regra["resultado"]
+    return "Diagnóstico inconclusivo"
 
 # Teste
 
 entrada = ["dificuldade_respiratoria"]
 print(diagnostico(entrada)) # Saída: Emergencia Médica
+entrada = ["tosse","febre"]
+print(diagnostico(entrada)) # Saída: Possivel Gripe
+print("------------------")
 
-2. Diagnóstico TI
+# Diagnóstico TI
 
 def diagnostico(fatos):
     regras = [
@@ -27,34 +29,65 @@ def diagnostico(fatos):
     { "condicoes": ["carregamento_lento", "luz_piscando"], "resultado": "Latência Alta" },
     ]
 
+    resultadosPossiveis = []
+
     for regra in regras:
-        if (fato in fatos for fato in regra["condicoes"]):
-        return regra["resultado"]
+        if any(fato in fatos for fato in regra["condicoes"]):
+            resultadosPossiveis.append(regra["resultado"])
+    
+    if len(resultadosPossiveis) == 0:
         return "Diagnóstico inconclusivo"
+    return resultadosPossiveis
+
 # Teste
 
 entrada = ["luz_desligada", "luz_vermelha"]
 print(diagnostico(entrada)) # Saída: Sem Internet
+entrada = ["luz_desligada", "carregamento_lento"]
+print(diagnostico(entrada)) # Saída: Sem Internet, Latência Alta
+entrada = ["luz_piscando", "luz_vermelha"]
+print(diagnostico(entrada)) # Saída: Latência Alta, Sem Internet
+print("------------------")
 
-3. Recomendador de Linguagens
+# Recomendador de Linguagens
 
 def diagnostico(Interesses):
-    regras = [
-    { "condicoes": ["web", "design"], "resultado": "Java Script" },
-    { "condicoes": ["dados", "IA"], "resultado": "Python" },
+    interesses = [
+    { "pesos": {"web": 2,"front-end": 1}, "resultado": "JavaScript" },
+    { "pesos": {"dados": 2,"ia": 1}, "resultado": "Python" },
+    { "pesos": {"jogos": 2,"desktop": 1}, "resultado": "C#" },
     ]
 
-    for regra in regras:
-        if all(interesse in interesses for interesse in regra["condicoes"]):
-        return regra["resultado"]
-        return "Diagnóstico inconclusivo"
+    pontuacoes = {"JavaScript": 0, "Python": 0, "C#" : 0}
+
+    for interesse in Interesses:
+        for area in interesses: 
+            if interesse in area["pesos"]:
+                pontuacoes[area["resultado"]] += area["pesos"][interesse]
+    
+    linguagem = [chave for chave,valor in pontuacoes.items() if valor == max(pontuacoes.values())]
+    print(linguagem)
 # Teste
 
-entrada = ["web", "design"]
-print(diagnostico(entrada)) # Saída: Java Script
+
+entrada_python = ["dados", "ia"]
+print(diagnostico(entrada_python)) # Saída: ['Python']
+
+
+entrada_csharp = ["jogos", "desktop"]
+print(diagnostico(entrada_csharp)) # Saída: ['C#']
+
+entrada_empate = ["web", "dados"]
+print(diagnostico(entrada_empate)) # Saída: ['JavaScript', 'Python'] (ambos terminam com 2 pontos)
+
+entrada_zero = ["musica", "culinaria"]
+print(diagnostico(entrada_zero)) # Saída: ['JavaScript', 'Python', 'C#'] (todos empatam com 0 pontos)
 
     Sistema Especialista é um sisitema computacional que simula o raciocínio de um especialista de uma área, 
 sua principal diferença de um programa de computador comum é sua arquitetura composta por motor de inferencia, 
 base de conhecimento e interface com usuário, com a base de conhecimento em uma estrutura de condições que 
 simulam um raciocinio de um humano especialista da área. Nessa atividade, o primeiro caso (Médico), ilustra um 
-sistema simples em que todos os sintomas tem que coincidir com o da doença para ter o resultado
+sistema simples em que todos os sintomas tem que coincidir com o da doença para ter o resultado; o segundo ilustra
+um sistema em que diferentes sintomas podem causar mais de uma consequencia, já o terceiro ilustra um sistema de 
+pesos, onde diferentes interesses importam para certas consequencias, alem da chance de mais de uma saida em um
+caso de interesses semelhantes.

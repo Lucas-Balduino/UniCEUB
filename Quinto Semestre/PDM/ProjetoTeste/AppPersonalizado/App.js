@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {View, Text, Image, Button, StyleSheet, TextInput, TouchableOpacity} from "react-native";
 import {useFonts} from "@expo-google-fonts/inter"; //npx expo install @expo-google-fonts/inter expo-font
+import { ScrollView } from "react-native-web";
 
 const Card = ({title, description}) => {
   return(
@@ -33,51 +34,63 @@ class App extends Component{
       this.setState({ nome: '' });
     }
   }
+
+  // entradaNome(){
+  //   if(this.state.input === ''){
+  //     alert("Digite seu nome: ");
+  //     return;
+  //   }
+  //   this.setState({nome: 'Seja Bem vindo a aplicação'+ this.state.input});
+  // }
+
   render() {
     return (
       <View style = {styles.container}>
-        <Text style={{color: '#6F96DE', fontFamily: "Arial", fontSize: 40, margin: 20}}>
-          Aplicação Inicial 
-        </Text>
+        <ScrollView scrollEnabled={true}>
 
-        <Text style={{color: '#000000', fontFamily: "Arial", fontSize: 20, margin: 20}}>
-          Primeiro Projeto - Padrão
-        </Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu Nome..."
-          onChangeText={(valor) => this.setState({ input: valor })} // Salva o texto enquanto digita
-        />
+          <Text style={{color: '#6F96DE', fontFamily: "Arial", fontSize: 40, margin: 20}}>
+            Aplicação Inicial 
+          </Text>
 
-        <TouchableOpacity 
-          style={styles.buttonEntrar} 
-          onPress={() => this.entradaNome(this.state.input)}
-        >
-          <Text style={styles.buttonText}>Entrar</Text>
-        </TouchableOpacity>
+          <Text style={{color: '#000000', fontFamily: "Arial", fontSize: 20, margin: 20}}>
+            Primeiro Projeto - Padrão
+          </Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu Nome..."
+            onChangeText={(valor) => this.setState({ input: valor })} // Salva o texto enquanto digita
+            />
 
-        {/* <Button -> Button é limitado para estilização
-        style = {styles.buttonEntrar}
-        title="Entrar" 
-        // color={"red"} 
-        onPress={() => this.entradaNome(input)}
-        /> */}
+          <TouchableOpacity 
+            style={styles.buttonEntrar} 
+            onPress={() => this.entradaNome(this.state.input)}
+            >
+            <Text style={styles.buttonText}>Entrar</Text>
+          </TouchableOpacity>
 
-        <Text style={styles.textWelcome}>
-          {this.state.nome}
-        </Text>
+          {/* <Button -> Button é limitado para estilização
+          style = {styles.buttonEntrar}
+          title="Entrar" 
+          // color={"red"} 
+          onPress={() => this.entradaNome(input)}
+          /> */}
 
-        <Image
-        source={{uri: 'https://love.doghero.com.br/wp-content/uploads/2018/12/golden-retriever-1.png'}}
-        style={{width: 300, height: 300}}
-        />
-        
-        <Card title = 'Título' description= 'Descrição'
-        />
+          <Text style={styles.textWelcome}>
+            {this.state.nome}
+          </Text>
 
-        <Jobs
-        largura={200} altura={150}
-        />
+          <Image
+          source={{uri: 'https://love.doghero.com.br/wp-content/uploads/2018/12/golden-retriever-1.png'}}
+          style={{width: 300, height: 300}}
+          />
+          
+          <Card title = 'Título' description= 'Descrição'
+          />
+
+          <Jobs
+          largura={200} altura={150}
+          />
+        </ScrollView>
       </View>
     );
   }
@@ -86,6 +99,7 @@ class App extends Component{
 export default App;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     alignItems: 'center',

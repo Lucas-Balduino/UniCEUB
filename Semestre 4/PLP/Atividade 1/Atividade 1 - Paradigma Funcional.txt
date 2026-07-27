@@ -1,0 +1,54 @@
+; 1) O comprimento de um círculo em função do raio.
+
+(define (circunferencia r)(* 2 pi r))
+(circunferencia 1)
+(circunferencia 2)
+
+; 2) A área de um círculo em função do raio.
+(define (area r)(* pi r r))
+(area 1)
+(area 2)
+
+(define (quadrado x)(* x x))
+(define(areaComposta r)(* pi (quadrado r)))
+(areaComposta 1)
+(areaComposta 2)
+
+;3) A área de uma esfera em função do raio.
+
+(define (areaEsfera r) (* 4 pi (quadrado r)))
+(areaEsfera 3)
+
+;4) O volume de uma esfera em função do raio.
+(define (cubo x) (* x x x))
+
+(define (volumeEsfera r) (* 4 pi (cubo r)))
+(volumeEsfera 3)
+
+;5) Soma de dois números reais.
+(define (soma x y)(+ x y))
+(soma 4 3)
+
+;6) Fatorial de um número natural.
+(define (factorial x)(if (= x 0)
+                         1
+                         (* x (factorial (- x 1)))
+                         )
+  )
+(factorial 6)
+
+;7) Sequência de Fibonacci
+
+(define (fibonacci x)
+  (cond ((= x 1) 1)
+        ((= x 2) 1)
+        (else (+ (fibonacci (- x 1))
+                 (fibonacci (- x 2))))))
+
+(fibonacci 5)
+;8) Soma dos n primeiros números naturais.
+(define (somaN x)(if(> x 0)
+                       (+ x (somaN (- x 1)))
+                        x)
+                    )
+(somaN 4)

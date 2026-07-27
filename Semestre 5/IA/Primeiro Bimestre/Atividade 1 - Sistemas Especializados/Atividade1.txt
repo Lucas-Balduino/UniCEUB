@@ -1,0 +1,78 @@
+Atividade 1 - Sistemas Especialistas
+Pesquise a definição de sistemas especialistas de IA
+Discuta principais aplicações em vários campos 
+Mostre como pode ser teoricamente implementado.
+Apresente uma implementação
+
+    Sistemas especialistas de IA são sistemas projetados para atuar como um especialista humano e resolver problemas complexos,
+e atuar em áreas como medicina utilizando dados como sistomas histórico e resultado de exames para sugerir diagnósticos e tratamentos,
+na área de finanças para analisar padroes de comportamento dos usuários para identificar fraudes. Essa emulação de conhecimento é atingida 
+graças à arquitetura dividida em tres campos: Base de Conhecimento em que são guardadas as informações dos especialistas humanos, que são 
+traduzidas para regras lógicas com condições e conclusões a partir delas; Memória de Trabalho para guardar a entrada do usuário com os dados
+do problema atual a ser solucionado; Motor de Inferência o sistema lógico que utiliza a base de conhecimento para deduzir as conclusoes para
+o sistema atual.
+
+    Exemplo de sistema especialista:
+    
+class MotorDeInferencia:
+    def __init__(self):
+        # 1. Base de Conhecimento: Guarda as regras (SE -> ENTÃO)
+        self.base_conhecimento = []
+        # 2. Memória de Trabalho: Guarda os fatos atuais (dados da transação)
+        self.memoria_trabalho = {}
+
+    def adicionar_regra(self, condicao, conclusao):
+        """Adiciona uma regra à Base de Conhecimento."""
+        self.base_conhecimento.append({'condicao': condicao, 'conclusao': conclusao})
+
+    def receber_fatos(self, fatos):
+        """Alimenta a Memória de Trabalho com novos dados."""
+        self.memoria_trabalho.update(fatos)
+
+    def analisar(self):
+        """3. Motor de Inferência: Avalia as regras contra os fatos."""
+        conclusoes = []
+        for regra in self.base_conhecimento:
+            # Testa se a condição da regra é verdadeira baseada nos fatos atuais
+            if regra['condicao'](self.memoria_trabalho):
+                conclusoes.append(regra['conclusao'])
+        
+        if conclusoes:
+            return " -> ".join(conclusoes)
+        return "Transação aprovada. Nenhuma anomalia detectada."
+
+# ==========================================
+# Colocando o Sistema para Rodar
+# ==========================================
+
+# Instanciando o nosso sistema
+sistema_fraude = MotorDeInferencia()
+
+# Definindo a Base de Conhecimento (Nossas Regras)
+# Regra 1: SE valor > 5000 E horário for de madrugada (0h às 5h)
+sistema_fraude.adicionar_regra(
+    condicao=lambda fatos: fatos.get('valor', 0) > 5000 and 0 <= fatos.get('hora', 12) <= 5,
+    conclusao="ALERTA: Valor alto fora do horário comercial (Possível Fraude)."
+)
+
+# Regra 2: SE a transação for internacional E o cliente nunca viajou
+sistema_fraude.adicionar_regra(
+    condicao=lambda fatos: fatos.get('internacional') == True and fatos.get('cliente_viajante') == False,
+    conclusao="ALERTA: Compra internacional de cliente sem histórico de viagem."
+)
+
+# Simulando a Memória de Trabalho (A transação que acabou de acontecer)
+fatos_da_transacao = {
+    'valor': 6000,
+    'hora': 3,
+    'internacional': False,
+    'cliente_viajante': False
+}
+
+sistema_fraude.receber_fatos(fatos_da_transacao)
+
+# Executando o Motor de Inferência
+resultado = sistema_fraude.analisar()
+
+print(f"Fatos analisados: {fatos_da_transacao}")
+print(f"Veredito do Sistema Especialista: {resultado}")

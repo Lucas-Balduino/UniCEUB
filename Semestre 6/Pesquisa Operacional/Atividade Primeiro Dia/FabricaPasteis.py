@@ -29,7 +29,7 @@ melhor_demanda = 0
 melhor_receita = 0
 
 # Testando preços de R$ 0.00 até R$ 10.00 em passos de R$ 0.05
-passo = 0.05
+passo = 0.01
 for i in range(0, 201):
     preco_atual = i * passo
     demanda, receita, lucro = calcular_cenario(preco_atual)

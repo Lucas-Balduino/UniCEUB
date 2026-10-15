@@ -1,16 +1,24 @@
+# Aula sobre caminhos de menor custo
+# Prof. Renato Cristiano Torres
+# Curso: Ciência da Computação
+# Ano 2026
+
+
 import heapq
+
 
 def dijkstra(grafo, origem):
     """
-    Calcula o menor caminho da origem para todos os outros véruces.
+    Calcula o menor caminho da origem para todos os outros vértices.
 
     grafo:
         Dicionário no formato:
         {
-            'A':{'B':4,'C':2,},
-            'B':{'A':4,'C':1,},
+            'A': {'B': 4, 'C': 2},
+            'B': {'A': 4, 'C': 1},
             ...
         }
+
     origem:
         Vértice inicial.
     """
@@ -18,14 +26,14 @@ def dijkstra(grafo, origem):
     # Distância inicial de todos os vértices = infinito
     distancias = {vertice: float('inf') for vertice in grafo}
 
-    # Distância da origem para ela mesma é zero
+    # A distância da origem para ela mesma é zero
     distancias[origem] = 0
 
-    # Guarda o vértice anterior para recontruir o caminho
+    # Guarda o vértice anterior para reconstruir o caminho
     anteriores = {vertice: None for vertice in grafo}
 
     # Fila de prioridade
-    fila = [{0,origem}]
+    fila = [(0, origem)]
 
     while fila:
 
@@ -35,21 +43,24 @@ def dijkstra(grafo, origem):
         if distancia_atual > distancias[vertice_atual]:
             continue
 
-        # Analise todos os vizinhos
+        # Analisa todos os vizinhos
         for vizinho, peso in grafo[vertice_atual].items():
+
             nova_distancia = distancia_atual + peso
 
             # Relaxamento da aresta
             if nova_distancia < distancias[vizinho]:
 
-                distancias[vizinho] = nova_distancia        
+                distancias[vizinho] = nova_distancia
                 anteriores[vizinho] = vertice_atual
 
                 heapq.heappush(
                     fila,
-                    (nova_distancia,vizinho)
-                )        
+                    (nova_distancia, vizinho)
+                )
+
     return distancias, anteriores
+
 
 def caminho_minimo(anteriores, origem, destino):
     """
@@ -67,29 +78,32 @@ def caminho_minimo(anteriores, origem, destino):
 
     if caminho[0] != origem:
         return None
-    
+
     return caminho
 
-# ----------------------------------
-#   EXEMPLO GRAFO
-# ----------------------------------
+
+# --------------------------------------------------
+# EXEMPLO DE GRAFO
+# --------------------------------------------------
 
 grafo = {
     
-    'A':{'B':4,'C':2,},
-    'B':{'A':4,'C':1, 'D': 5},
-    'C':{'A':2,'B':1, 'D': 8, 'E': 10},
-    'D':{'B':5,'C':8, 'E': 2},
-    'E':{'C':10,'D':2}
+    'A':{'B':6,'B':4,'C':4,'S':2},
+    'B':{'A':6,'A':4,'C':2, 'D': 3},
+    'C':{'A':4,'B':2, 'D': 1},
+    'D':{'B':3,'C':1},
+    'S':{'A':2,'B':5}
 }
 
-origem = 'A'
+origem = 'S'
 
 distancias, anteriores = dijkstra(grafo, origem)
 
-print (f"Menores caminhos partindo de {origem}:\n")
+
+print(f"Menores caminhos partindo de {origem}:\n")
 
 for destino in grafo:
+
     caminho = caminho_minimo(
         anteriores,
         origem,
